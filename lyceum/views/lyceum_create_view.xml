@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="lyceum_create_action" model="ir.actions.act_window">
+        <field name="name">Create</field>
+        <field name="res_model">lyceum.create</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id = "lyceum_create_view_tree" model="ir.ui.view">
+        <field name = "name">lyceum.create.tree.view</field>
+        <field name = "model">lyceum.create</field>
+        <field name = "arch" type="xml">    
+            <tree string="lyceum create">
+                <field name = "ly_name" string = "Name"/>
+                <field name = "ly_description" string= "Description"/>
+                <field name = "ly_area" string = "Area"/>
+                <field name = "ly_capacity" string = "Capacity"/>
+                <field name = "ly_projectoravailable" string = "Projector Available"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="lyceum_create_form_view" model = "ir.ui.view">
+        <field name = "name">lyceum.create.form.view</field>
+        <field name = "model">lyceum.create</field>
+        <field name = "arch" type="xml">
+            <form string="lyceum create">
+                <sheet>
+                    <div class="oe_title">
+                        <h1 class= "title">
+                            <field name = "ly_name" class="oe_inline"/> 
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name = "ly_name" string= "Name"/>
+                            <field name = "ly_description" string= "Description"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <group>
+                                <group>
+                                    <field name = "ly_area" string= "Area"/>
+                                    <field name = "ly_capacity" string= "Capacity"/>
+                                    <field name = "ly_projectoravailable" string= "Projector Available"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
