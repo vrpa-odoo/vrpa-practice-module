@@ -3,10 +3,10 @@
     <menuitem id="lyceum_root_menu" name="lyceum" web_icon = 'lyceum,play_store_512.png'>
         <menuitem id="lyceum_first_level_menu" name="Conference Room">
             <menuitem id="lyceum_create_menu_action" action="lyceum_create_action"/>
-            <menuitem id = "lyceum_type_menu_action" action="lyceum_type_action"/>
+            <menuitem id = "lyceum_tags_menu_action" action="lyceum_tags_action"/>
+        </menuitem>
+        <menuitem id="lyceum_second_level_menu" name="Event">
+            <menuitem id = "event_create_menu_action" action="event_create_action"/>     
         </menuitem>
     </menuitem>
-    <!-- <menuitem id="lyceum_second_level_menu" name="Type">
-        <menuitem id = "lyceum_type_menu_action" action="lyceum_type_action"/>
-    </menuitem> -->
 </odoo>

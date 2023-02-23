@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id = "event_create_action" model="ir.actions.act_window">
+        <field name="name">Organize</field>
+        <field name="res_model">event.create</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id = "event_create_view_tree" model="ir.ui.view">
+        <field name="name">event.create.tree.view</field>
+        <field name="model">event.create</field>
+        <field name="arch" type="xml">
+            <tree string="Event Organize">
+                <field name = "event_name"/>
+                <field name = "event_description"/>
+                <field name = "event_fromdatetime"/>
+                <field name = "event_todatetime"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="event_create_form_view" model = "ir.ui.view">
+        <field name = "name">event.create.from.view</field>
+        <field name = "model">event.create</field>
+        <field name = "arch" type="xml">
+            <form string="Event Organize">
+            <header>
+                <button name = "action_request" type="object" string="Request" states="new" class="oe_highlight"/>
+                <button name = "action_approve" type="object" string="Approve" states="requested" class="oe_highlight" />
+                <button name = "action_cancel" type="object" string="Cancel" states="requested" class="oe_highlight" />
+                <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
+            </header>
+            <sheet> 
+                <div class="oe_title">
+                    <h1 class="title">
+                        <field name = "event_name" class="oe_inline" placeholder="Event Name"/>
+                    </h1>
+                </div>
+                <group>
+                    <field name="event_lyceum_list"  widget="selection"/>
+                    <field name="event_description" string="Purpose"/>
+                    <field name="event_organizer_name" string="Organizer Name"/>
+                    <field name="event_fromdatetime"/>
+                    <field name="event_todatetime"/>
+                    <field name="event_totaltime"/>
+                    <field name="event_lyceum_available"/>
+                    <field name="event_projector_needed"/>
+                    <field name="event_capacity_needed"/>
+                    <field name="event_phone_number"/>
+                    <field name="event_email"/>
+                </group>
+                <notebook>
+                    <page string="Agenda">
+                        <field name="event_details"/>
+                    </page>
+                </notebook>
+            </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -5,9 +5,9 @@
     'installable': True,
     "data": [
         'security/ir.model.access.csv',
-        'views/lyceum_type_view.xml',
+        'views/lyceum_tags_view.xml',
         'views/lyceum_create_view.xml',
+        'views/event_create_view.xml',
         'views/lyceum_menus.xml',
-
     ]
 }

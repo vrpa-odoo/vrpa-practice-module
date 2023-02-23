@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 lyceum.access_lyceum_create,access_lyceum_create,lyceum.model_lyceum_create,base.group_user,1,1,1,1
-lyceum.access_lyceum_type,access_lyceum_type,lyceum.model_lyceum_type,base.group_user,1,1,1,1
+lyceum.access_lyceum_tags,access_lyceum_tags,lyceum.model_lyceum_tags,base.group_user,1,1,1,1
+lyceum.access_event_create,access_event_create,lyceum.model_event_create,base.group_user,1,1,1,1
