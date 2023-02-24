@@ -12,3 +12,4 @@ class LyceumCreate(models.Model):
     ly_capacity = fields.Integer()
     ly_projectoravailable=fields.Boolean()
     ly_status=fields.Selection(string='Status',selection=[('available',"Available"),('reserved',"Reserved")])
+    # ly_id = fields.One2many("event.create","event_lyceum_list")

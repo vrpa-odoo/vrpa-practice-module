@@ -7,7 +7,7 @@ class EventCreate(models.Model):
     _rec_name="event_name"
     
     event_lyceum_list = fields.Many2one("lyceum.create",string="Lyceum List")
-    event_lyceum_available = fields.Char(string="Availability")
+    event_lyceum_available = fields.Boolean(string="Availability")
     event_name=fields.Char(string="Organize")
     event_description=fields.Text(string="Description")
     event_fromdatetime=fields.Datetime(string ="From Date")
@@ -40,7 +40,14 @@ class EventCreate(models.Model):
     def _compute_total_time(self):
         for record in (self):
             record.event_totaltime=record.event_todatetime-record.event_fromdatetime
-    
+
+    # @api.depends("event_projector_needed")
+    # def _compute_lyceum_list(self):
+    #     for record in self:
+    #         if record.event_projector_needed:
+    #             record.event_lyceum_list=record.event_lyceum_list.ly_projectoravailable == True
+
+        
     # def _inverse_total_time(self):
     #     for record in self:
     #         record.event_todatetime=record.event_fromdatetime+record.event_totaltime
@@ -49,4 +56,4 @@ class EventCreate(models.Model):
     # @api.depends("event_fromdatetime","event_todatetime")
     # def _compute_availability(self):
     #     for record in self:
-    #         if record.
+    #         if record

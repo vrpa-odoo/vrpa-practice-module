@@ -37,7 +37,6 @@
                     </h1>
                 </div>
                 <group>
-                    <field name="event_lyceum_list"  widget="selection"/>
                     <field name="event_description" string="Purpose"/>
                     <field name="event_organizer_name" string="Organizer Name"/>
                     <field name="event_fromdatetime"/>
@@ -45,6 +44,7 @@
                     <field name="event_totaltime"/>
                     <field name="event_lyceum_available"/>
                     <field name="event_projector_needed"/>
+                    <field name="event_lyceum_list"  widget="selection"/>
                     <field name="event_capacity_needed"/>
                     <field name="event_phone_number"/>
                     <field name="event_email"/>
