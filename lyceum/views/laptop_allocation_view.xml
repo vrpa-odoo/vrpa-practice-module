@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <record id="laptop_list_view_form" model="ir.ui.view">
+        <field name="name">List View</field>
+        <field name="model">laptop.allocation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="model"/>
+                <field name="location"/>
+                <field name="war_expire"/>
+                <field name="mac_address"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="laptop_list_form" model="ir.ui.view">
+        <field name="name">List View</field>
+        <field name="model">laptop.allocation</field>
+        <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <h1>
+                    <field name="name" />
+                </h1>
+                <group>
+                    <group>
+                        <field name="model" />
+                        <field name='war_expire' />
+                    </group>
+                    <group>
+                        <field name="technician_name" />
+                        <field name="location"/>
+                        <field name="mac_address"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page name="intern">
+                        <field name="intern_name_ids" type="xml">
+                            <tree editable = 'bottom'>
+                                <field name="name"></field>
+                                <field name="login"></field>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+        </field>
+    </record>
+
+
+        
+</odoo>

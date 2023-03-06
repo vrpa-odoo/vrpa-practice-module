@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="event_create_report_template">
+        <t t-foreach="docs" t-as="event">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                            <span t-field="event.event_name"/>
+                        </h2>
+                        <div>
+                            <strong>Event Description: </strong>
+                            <span t-field="event.event_description"/>
+                        </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Start Date and Time</th>
+                                        <th>End Date and Time</th>
+                                        <th>Total Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>
+                                        <span t-field="event.event_fromdatetime"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="event.event_todatetime"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="event.event_totaltime"/>
+                                    </td>
+                                </tbody>
+                            </table>
+                        <div>
+                            <strong>Agenda:</strong>
+                            <div>
+                                <span t-field="event.event_details"/>    
+                            </div>         
+                        </div>                   
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

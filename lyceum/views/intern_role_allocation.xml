@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <record id="intern_role_list_view_form" model="ir.ui.view">
+        <field name="name">List View</field>
+        <field name="model">role.allocation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="intern_name" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="intern_list_form" model="ir.ui.view">
+        <field name="name">List View</field>
+        <field name="model">role.allocation</field>
+        <field name="arch" type="xml">
+           <form>
+            <sheet>
+                <h1>
+                    <field name="intern_name" />
+                </h1>
+                <notebook>
+                    <page name="intern">
+                        <field name="intern_type_ids" type="xml">
+                            <tree editable = 'bottom'>
+                                <field name="intern_name"></field>
+                                <field name="login"></field>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+           </form>
+        </field>
+    </record>
+        
+</odoo>

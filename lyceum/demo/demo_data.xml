@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Properties -->
+    <record id="rec_1" model="event.create">
+        <field name="event_name">Javascript</field>
+        <!-- <field name="event_fromdatetime">A nice and big villa</field>
+        <field name="event_todatetime">12345</field> -->
+        <field name="event_projector_needed">True</field>
+        <!-- <field name="event_lyceum_list">1600000</field> -->
+        <field name="event_capacity_needed">6</field>
+        <field name="event_phone_number">100433245</field>
+        <field name="event_email">frjni@oin.com</field>
+            <!-- <field name="user_id" ref="base.user_admin"/> -->
+    </record>
+    
+    <record id="rec_2" model="event.create">
+        <field name="event_name">Owl Training</field>
+        <!-- <field name="event_fromdatetime">A nice and big villa</field>
+        <field name="event_todatetime">12345</field> -->
+        <field name="event_projector_needed">False</field>
+        <!-- <field name="event_lyceum_list">1600000</field> -->
+        <field name="event_capacity_needed">5</field>
+        <field name="event_phone_number">100433245</field>
+        <field name="event_email">frjni@oin.com</field>
+            <!-- <field name="user_id" ref="base.user_admin"/> -->
+    </record>
+
+    <record id="rec_3" model="event.create">
+        <field name="event_name">Sql Training</field>
+        <!-- <field name="event_fromdatetime">A nice and big villa</field>
+        <field name="event_todatetime">12345</field> -->
+        <field name="event_projector_needed">True</field>
+        <!-- <field name="event_lyceum_list">1600000</field> -->
+        <field name="event_capacity_needed">16</field>
+        <field name="event_phone_number">100433245</field>
+        <field name="event_email">frjni@oin.com</field>
+            <!-- <field name="user_id" ref="base.user_admin"/> -->
+    </record>
+    <record id="rec_4" model="event.create">
+        <field name="event_name">Pyhton Training</field>
+        <!-- <field name="event_fromdatetime">A nice and big villa</field>
+        <field name="event_todatetime">12345</field> -->
+        <field name="event_projector_needed">True</field>
+        <!-- <field name="event_lyceum_list">1600000</field> -->
+        <field name="event_capacity_needed">36</field>
+        <field name="event_phone_number">100433245</field>
+        <field name="event_email">frjni@oin.com</field>
+            <!-- <field name="user_id" ref="base.user_admin"/> -->
+    </record>
+</odoo>

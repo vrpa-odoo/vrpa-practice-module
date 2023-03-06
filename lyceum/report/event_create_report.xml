@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="event_report" model="ir.actions.report">
+        <field name="name">Event Create</field>
+        <field name="model">event.create</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">lyceum.event_create_report_template</field>
+        <field name="report_file">lyceum.event_create_report_template</field>
+        <!-- <field name="print_report_name">'Property Offers - %s' % object.name</field> -->
+        <field name="binding_model_id" ref="model_event_create"/>
+        <field name="binding_type">report</field> 
+    </record>
+</odoo>

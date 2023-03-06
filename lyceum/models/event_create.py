@@ -6,14 +6,14 @@ class EventCreate(models.Model):
     _description="Create Event"
     _rec_name="event_name"
     
-    event_lyceum_list = fields.Many2one("lyceum.create",string="Lyceum List")
-    event_lyceum_available = fields.Boolean(string="Availability")
     event_name=fields.Char(string="Organize")
     event_description=fields.Text(string="Description")
     event_fromdatetime=fields.Datetime(string ="From Date")
     event_todatetime=fields.Datetime(string="To Date")
     event_totaltime=fields.Char(string="Total Time", compute="_compute_total_time")
     event_projector_needed=fields.Boolean(string="Projector Needed")
+    event_lyceum_list = fields.Many2one("lyceum.create",string="Lyceum List", domain="[('ly_projectoravailable', '=', event_projector_needed )]")
+    event_lyceum_available = fields.Boolean(string="Availability")
     event_capacity_needed=fields.Integer(string="Number of Attendes")
     event_details=fields.Text("Event Agenda")
     event_organizer_name=fields.Many2one("res.users")
@@ -36,16 +36,19 @@ class EventCreate(models.Model):
             record.state = "cancel"
         return True
     
-    @api.depends("event_fromdatetime","event_todatetime")
+    # @api.depends("event_fromdatetime","event_todatetime")
     def _compute_total_time(self):
-        for record in (self):
-            record.event_totaltime=record.event_todatetime-record.event_fromdatetime
 
+        for record in self:
+                record.event_totaltime =record.event_todatetime-record.event_fromdatetime
     # @api.depends("event_projector_needed")
     # def _compute_lyceum_list(self):
     #     for record in self:
     #         if record.event_projector_needed:
-    #             record.event_lyceum_list=record.event_lyceum_list.ly_projectoravailable == True
+                
+            # if record.event_projector_needed:
+            #     if record.event_lyceum_list.ly_projectoravailable == True:
+            #         record.event_lyceum_list= record.event_lyceum_list.ly_projectoravailable == True
 
         
     # def _inverse_total_time(self):

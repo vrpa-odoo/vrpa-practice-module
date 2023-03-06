@@ -3,18 +3,50 @@
     <record id = "event_create_action" model="ir.actions.act_window">
         <field name="name">Organize</field>
         <field name="res_model">event.create</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record id="event_create_view_kanban" model="ir.ui.view">
+        <field name="name">event.create.kanban.view</field>
+        <field name="model">event.create</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" records_draggable="false">
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div>
+                                <div>
+                                    <span><field name="event_name"/></span>
+                                </div> 
+                                <div t-if="record.event_organizer_name.value">
+                                    <!-- <i class="fa fa-user me-2"/> -->
+                                    <strong><field name="event_organizer_name" widget="many2one_avatar_partner"/></strong>
+                                </div>
+                                <div>
+                                    <span><field name="event_totaltime"/></span>
+                                </div>
+                            </div>    
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
     </record>
 
     <record id = "event_create_view_tree" model="ir.ui.view">
         <field name="name">event.create.tree.view</field>
         <field name="model">event.create</field>
         <field name="arch" type="xml">
-            <tree string="Event Organize">
+            <tree string="Event Organize" decoration-success="state=='approved'"
+                                          decoration-danger="state=='cancel'"
+                                          decoration-info="state=='requested'"
+                                          decoration-muted="state=='new'">
                 <field name = "event_name"/>
                 <field name = "event_description"/>
                 <field name = "event_fromdatetime"/>
                 <field name = "event_todatetime"/>
+                <field name = "state" invisible='1'/>
             </tree>
         </field>
     </record>

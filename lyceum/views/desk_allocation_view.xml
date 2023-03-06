@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <record id="desk_list_view_form" model="ir.ui.view">
+        <field name="name">List View</field>
+        <field name="model">desk.allocation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget='handle'/>
+                <field name="desk_type"/>
+                <field name="desk_no"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="desk_list_form" model="ir.ui.view">
+        <field name="name">List View</field>
+        <field name="model">desk.allocation</field>
+        <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                        <field name="desk_no"/>
+                        <field name="desk_type"/>
+                        <field name="is_assigned"/>
+                </group>
+            </sheet>
+        </form>
+        </field>
+    </record>
+    
+</odoo>
